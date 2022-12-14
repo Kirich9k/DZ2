@@ -1,9 +1,11 @@
 ﻿Console.Clear();
-Console.Write("Введите первое число: ");
-int n1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите второе число: ");
-int n2 = Convert.ToInt32(Console.ReadLine());
-if (n1 * n1 == n2 || n2 * n2 == n1)
-    Console.WriteLine("Да");
+Console.Write("Введите трехзначное число, чтобы увидеть его вторую цифру: ");
+int n = Convert.ToInt32(Console.ReadLine());
+if (n >= 100)
+    Console.Write($"{(n / 10) % 10}");
 else
-    Console.WriteLine("Нет");
+    while (n < 100) {
+        Console.Write("Число не трехзначное!\nВведите трехзначное число, чтобы увидеть его вторую цифру: ");
+        n = Convert.ToInt32(Console.ReadLine());
+    }
+    Console.Write($"{(n / 10) % 10}");
